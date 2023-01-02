@@ -1,14 +1,10 @@
 import { Request, Response } from 'express';
-import {sequelize} from '../instances/mysql';
+import {User} from '../models/User'
 import { Product } from '../models/Product';
 
 export const home = async (req: Request, res: Response)=>{
-    try {
-        await sequelize.authenticate();
-        console.log("conexao bem sucedida!")
-    } catch(error){
-        console.log("deu problema ", error)
-    }
+    let users = await User.findAll();
+    console.log("Usuarios ", JSON.stringify(users));
 
     let age: number = 90;
     let showOld: boolean = false;
