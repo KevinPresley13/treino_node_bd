@@ -9,7 +9,7 @@ export const home = async (req: Request, res: Response)=>{
     let newUser = User.build({
         name: 'Luan'
     });
-    await newUser.save();
+    //await newUser.save();
     //criando usuario com o CREATE
     /*let newuser = await User.create({
         name: 'adimin',
